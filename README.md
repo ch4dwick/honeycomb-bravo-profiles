@@ -16,8 +16,10 @@ Requirement:
 
 - [Toliss Airbus A340](https://toliss.com/pages/a340-600)
 - [Toliss Airbus A321](https://toliss.com/pages/a321) (could probably work on the A320 & A319)
+Special behavior: These two profiles simplify the autoland procedure of pressing AP 1 & 2 on ILS. To use, just press Autopilot on your Bravo twice on ILS approach.
 - Beechcraft C90B (works on the IBAV8N C90B Blackhawk) [GNS](https://forums.x-plane.org/files/file/92114-king-air-c90b-evo-gns-blackhawk-xp12/) & [G1000](https://forums.x-plane.org/files/file/89178-king-air-c90b-evo-g1000-blackhawk/)
 - [Zibo 737-800](https://forums.x-plane.org/forums/topic/138974-b737-800x-zibo-mod-info-installation-download-links/)
+Special behavior: This profile simplify the autoland procedure of pressing AP 1 & 2 on ILS. To use, just press Autopilot on your Bravo twice on ILS approach. This profile also supports the landing gear lock behavior of the Zibo. To use, press the landing gear down after gears up. This will put the landing gear level in the middle position. To lower the landing gear, move the lever up then down. 
 - [SSG 747-800](https://store.x-plane.org/B-747-8-Series-Anniversary-Edition_p_1079.html)
 - [FlyjSim Q4XP](https://www.flyjsim.com/q4xp)
 
