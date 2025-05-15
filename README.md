@@ -10,6 +10,7 @@ Requirement:
 - In the HoneyComb Configurator, click on Actions on the top of the configurator window.
 - Click Import Profiles, then Select File(s).
 - Choose the profiles you want to import.
+- Copy the prf of your choice to <your x-plane installation\>\Output\preferences\control profiles
 
 ## Currently Mapped Profiles
 
