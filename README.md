@@ -10,7 +10,7 @@ Requirement:
 - In the HoneyComb Configurator, click on Actions on the top of the configurator window.
 - Click Import Profiles, then Select File(s).
 - Choose the profiles you want to import.
-- Copy the prf of your choice to <your x-plane installation\>\Output\preferences\control profiles
+- Copy the prf of your choice to <your x-plane installation\>\Output\preferences\control profiles. These settings will be visible under Joystick tab of the Settings window. 
 
 ## Currently Mapped Profiles
 
@@ -23,5 +23,7 @@ Special behavior: This profile simplify the autoland procedure of pressing AP 1 
 - [SSG 747-800](https://store.x-plane.org/B-747-8-Series-Anniversary-Edition_p_1079.html)
 - [FlyjSim Q4XP](https://www.flyjsim.com/q4xp)
 
-  Some things to consider:
-  Most of these mappings don't actually map controls on the aircraft. They usually correctly map most of the LEDs and autopilot controls. For the mappings, they're mostly inside the .prf files.
+## Some things to consider:
+Most of these mappings don't actually map controls on the aircraft. They usually correctly map most of the LEDs and autopilot controls. For the mappings, they're mostly inside the .prf files.
+
+I own a Thrustmaster TCA Sidestick so some of the commands will go to those or the appropriate button on your controller.
