@@ -2464,7 +2464,7 @@
     },
     {
       "Version": 1,
-      "SaveName": "Beechcraft",
+      "SaveName": "Q400",
       "Data": [
         {
           "ButtonNumber": 0,
@@ -2473,30 +2473,7 @@
         },
         {
           "ButtonNumber": 1,
-          "PressEvent": [
-            {
-              "Variables": [
-                {
-                  "Variable": "sim/autopilot/NAV",
-                  "Value": "",
-                  "VariableIsCustom": true,
-                  "VariableBoundaries": {
-                    "MinValue": "",
-                    "MaxValue": "",
-                    "Clamp": false
-                  }
-                }
-              ],
-              "Variable": "",
-              "Value": "",
-              "Name": "",
-              "Condition": "",
-              "ConditionValue": "",
-              "ConditionLogic": "",
-              "Conditions": [],
-              "Repeat": 0
-            }
-          ],
+          "PressEvent": [],
           "ReleaseEvent": []
         },
         {
@@ -2575,9 +2552,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/autopilot/nose_up",
+                  "Variable": "FJS/Q4XP/Autopilot/WheelUP",
                   "Value": "",
-                  "VariableIsCustom": false,
+                  "VariableIsCustom": true,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -2601,7 +2578,7 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/GPS/g1000n3_crs_up",
+                  "Variable": "sim/radios/obs_HSI_up",
                   "Value": "",
                   "VariableIsCustom": false,
                   "VariableBoundaries": {
@@ -2614,9 +2591,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/autopilot/airspeed_up",
+                  "Variable": "FJS/Q4XP/Autopilot/WheelDN",
                   "Value": "",
-                  "VariableIsCustom": false,
+                  "VariableIsCustom": true,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -2658,9 +2635,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/autopilot/nose_down",
+                  "Variable": "FJS/Q4XP/Autopilot/WheelDN",
                   "Value": "",
-                  "VariableIsCustom": false,
+                  "VariableIsCustom": true,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -2684,7 +2661,7 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/GPS/g1000n3_crs_down",
+                  "Variable": "sim/radios/obs_HSI_down",
                   "Value": "",
                   "VariableIsCustom": false,
                   "VariableBoundaries": {
@@ -2697,9 +2674,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/autopilot/airspeed_down",
+                  "Variable": "FJS/Q4XP/Autopilot/WheelUP",
                   "Value": "",
-                  "VariableIsCustom": false,
+                  "VariableIsCustom": true,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -3068,8 +3045,8 @@
           "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/autopilot/altitude_hold_status",
-              "ConditionValue": ">=1",
+              "Condition": "sim/cockpit2/autopilot/altitude_hold_armed",
+              "ConditionValue": "1",
               "ConditionIsCustom": false
             }
           ]
@@ -3200,12 +3177,12 @@
         {
           "ByteIndex": 2,
           "BitIndex": 6,
-          "ConditionLogic": "",
+          "ConditionLogic": "OR",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/annunciators/master_warning",
-              "ConditionValue": "=1",
-              "ConditionIsCustom": false
+              "Condition": "FJS/Q4XP/Annunciators/CautWarn_Lit:0",
+              "ConditionValue": ">0.1",
+              "ConditionIsCustom": true
             }
           ]
         },
@@ -3344,12 +3321,12 @@
         {
           "ByteIndex": 3,
           "BitIndex": 5,
-          "ConditionLogic": "",
+          "ConditionLogic": "OR",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/annunciators/master_caution",
-              "ConditionValue": "=1",
-              "ConditionIsCustom": false
+              "Condition": "FJS/Q4XP/Annunciators/CautWarn_Lit:1",
+              "ConditionValue": ">0.1",
+              "ConditionIsCustom": true
             }
           ]
         },
@@ -3383,14 +3360,14 @@
           "ConditionLogic": "OR",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/fuel/transfer_pump_left",
-              "ConditionValue": "=2",
-              "ConditionIsCustom": false
+              "Condition": "sim/cockpit2/engine/actuators/fuel_pump_on:0",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
             },
             {
-              "Condition": "sim/cockpit2/fuel/transfer_pump_right",
-              "ConditionValue": "=2",
-              "ConditionIsCustom": false
+              "Condition": "sim/cockpit2/engine/actuators/fuel_pump_on:1",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
             }
           ]
         },
@@ -3412,21 +3389,41 @@
           "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/annunciators/low_voltage",
-              "ConditionValue": "=1",
-              "ConditionIsCustom": false
+              "Condition": "sim/cockpit2/electrical/battery_voltage_actual_volts:0",
+              "ConditionValue": "=0",
+              "ConditionIsCustom": true
             }
           ]
         },
         {
           "ByteIndex": 4,
           "BitIndex": 3,
-          "ConditionLogic": "",
+          "ConditionLogic": "OR",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/annunciators/cabin_door_open",
-              "ConditionValue": "=1",
-              "ConditionIsCustom": false
+              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:0",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
+            },
+            {
+              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:1",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
+            },
+            {
+              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:2",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
+            },
+            {
+              "Condition": "FJS/Q4XP/Manips/CabinMainDoor_Ctl:0",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
+            },
+            {
+              "Condition": "FJS/Q4XP/Manips/CargoDoor_Ctl:0",
+              "ConditionValue": "1",
+              "ConditionIsCustom": true
             }
           ]
         }
@@ -4618,9 +4615,9 @@
           "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/annunciators/master_caution",
-              "ConditionValue": "=1",
-              "ConditionIsCustom": false
+              "Condition": "laminar/B738/annunciator/master_caution_light",
+              "ConditionValue": ">0",
+              "ConditionIsCustom": true
             }
           ]
         },
@@ -5695,7 +5692,7 @@
     },
     {
       "Version": 1,
-      "SaveName": "Q400",
+      "SaveName": "Beechcraft",
       "Data": [
         {
           "ButtonNumber": 0,
@@ -5704,7 +5701,30 @@
         },
         {
           "ButtonNumber": 1,
-          "PressEvent": [],
+          "PressEvent": [
+            {
+              "Variables": [
+                {
+                  "Variable": "sim/autopilot/NAV",
+                  "Value": "",
+                  "VariableIsCustom": true,
+                  "VariableBoundaries": {
+                    "MinValue": "",
+                    "MaxValue": "",
+                    "Clamp": false
+                  }
+                }
+              ],
+              "Variable": "",
+              "Value": "",
+              "Name": "",
+              "Condition": "",
+              "ConditionValue": "",
+              "ConditionLogic": "",
+              "Conditions": [],
+              "Repeat": 0
+            }
+          ],
           "ReleaseEvent": []
         },
         {
@@ -5783,9 +5803,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "FJS/Q4XP/Autopilot/WheelDN",
+                  "Variable": "sim/autopilot/nose_up",
                   "Value": "",
-                  "VariableIsCustom": true,
+                  "VariableIsCustom": false,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -5809,7 +5829,7 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/radios/obs_HSI_up",
+                  "Variable": "sim/GPS/g1000n3_crs_up",
                   "Value": "",
                   "VariableIsCustom": false,
                   "VariableBoundaries": {
@@ -5822,9 +5842,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "FJS/Q4XP/Autopilot/WheelDN",
+                  "Variable": "sim/autopilot/airspeed_up",
                   "Value": "",
-                  "VariableIsCustom": true,
+                  "VariableIsCustom": false,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -5866,9 +5886,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "FJS/Q4XP/Autopilot/WheelUP",
+                  "Variable": "sim/autopilot/nose_down",
                   "Value": "",
-                  "VariableIsCustom": true,
+                  "VariableIsCustom": false,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -5892,7 +5912,7 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "sim/radios/obs_HSI_down",
+                  "Variable": "sim/GPS/g1000n3_crs_down",
                   "Value": "",
                   "VariableIsCustom": false,
                   "VariableBoundaries": {
@@ -5905,9 +5925,9 @@
                   "ConditionIsCustom": true
                 },
                 {
-                  "Variable": "FJS/Q4XP/Autopilot/WheelUP",
+                  "Variable": "sim/autopilot/airspeed_down",
                   "Value": "",
-                  "VariableIsCustom": true,
+                  "VariableIsCustom": false,
                   "VariableBoundaries": {
                     "MinValue": "",
                     "MaxValue": "",
@@ -6276,8 +6296,8 @@
           "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/autopilot/altitude_hold_armed",
-              "ConditionValue": "1",
+              "Condition": "sim/cockpit2/autopilot/altitude_hold_status",
+              "ConditionValue": ">=1",
               "ConditionIsCustom": false
             }
           ]
@@ -6408,12 +6428,12 @@
         {
           "ByteIndex": 2,
           "BitIndex": 6,
-          "ConditionLogic": "OR",
+          "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "FJS/Q4XP/Annunciators/CautWarn_Lit:0",
-              "ConditionValue": ">0.1",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/annunciators/master_warning",
+              "ConditionValue": "=1",
+              "ConditionIsCustom": false
             }
           ]
         },
@@ -6552,12 +6572,12 @@
         {
           "ByteIndex": 3,
           "BitIndex": 5,
-          "ConditionLogic": "OR",
+          "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "FJS/Q4XP/Annunciators/CautWarn_Lit:1",
-              "ConditionValue": ">0.1",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/annunciators/master_caution",
+              "ConditionValue": "=1",
+              "ConditionIsCustom": false
             }
           ]
         },
@@ -6591,14 +6611,14 @@
           "ConditionLogic": "OR",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/engine/actuators/fuel_pump_on:0",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/fuel/transfer_pump_left",
+              "ConditionValue": "=2",
+              "ConditionIsCustom": false
             },
             {
-              "Condition": "sim/cockpit2/engine/actuators/fuel_pump_on:1",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/fuel/transfer_pump_right",
+              "ConditionValue": "=2",
+              "ConditionIsCustom": false
             }
           ]
         },
@@ -6620,41 +6640,21 @@
           "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "sim/cockpit2/electrical/battery_voltage_actual_volts:0",
-              "ConditionValue": "=0",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/annunciators/low_voltage",
+              "ConditionValue": "=1",
+              "ConditionIsCustom": false
             }
           ]
         },
         {
           "ByteIndex": 4,
           "BitIndex": 3,
-          "ConditionLogic": "OR",
+          "ConditionLogic": "",
           "Conditions": [
             {
-              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:0",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
-            },
-            {
-              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:1",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
-            },
-            {
-              "Condition": "FJS/Q4XP/Manips/CabinDoors_Ctl:2",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
-            },
-            {
-              "Condition": "FJS/Q4XP/Manips/CabinMainDoor_Ctl:0",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
-            },
-            {
-              "Condition": "FJS/Q4XP/Manips/CargoDoor_Ctl:0",
-              "ConditionValue": "1",
-              "ConditionIsCustom": true
+              "Condition": "sim/cockpit2/annunciators/cabin_door_open",
+              "ConditionValue": "=1",
+              "ConditionIsCustom": false
             }
           ]
         }
