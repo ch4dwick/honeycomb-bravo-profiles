@@ -19,8 +19,11 @@ Requirement:
 Special behavior: These two profiles simplify the autoland procedure of pressing AP 1 & 2 on ILS. To use, just press Autopilot on your Bravo twice on ILS approach.
 - Beechcraft C90B (works on the IBAV8N C90B Blackhawk) [GNS](https://forums.x-plane.org/files/file/92114-king-air-c90b-evo-gns-blackhawk-xp12/) & [G1000](https://forums.x-plane.org/files/file/89178-king-air-c90b-evo-g1000-blackhawk/)
 - [Zibo 737-800](https://forums.x-plane.org/forums/topic/138974-b737-800x-zibo-mod-info-installation-download-links/)
-- Zibo profile also works on the [LevelUp 737](https://forum.thresholdx.net/files/file/3865-levelup-737ng-series/)
-Special behavior: This profile simplifies the autoland procedure of pressing AP 1 & 2 on ILS. To use, after APP is armed, press Autopilot on your Bravo twice on ILS approach. If the approach mode is not armed, the AP button will behave as a toggle between the two CMD buttons. This profile also supports the landing gear lock behavior of the Zibo. To use, press the landing gear down after gears up. This will put the landing gear level in the middle position. To lower the landing gear, move the lever up then down. 
+- [LevelUp 737](https://forum.thresholdx.net/files/file/3865-levelup-737ng-series/)
+
+  Special behavior for Zibo, LevelUp, and Toliss: This profile implements the autoland procedure of pressing AP 1 & 2 on ILS. To use, after APP is armed, press Autopilot on your Bravo on ILS approach while AP 1/CMD A is armed or press twice if both are unarmed. Note that if the approach mode is not armed, like when a lock is not acquired or the runway does not support autoland, the AP button will behave as a toggle between the two CMD buttons.
+
+  This profile also supports the landing gear lock behavior of the 737. To use, pull the landing gear down after gears up all green. This will put the landing gear level in the middle position. To lower the landing gear, pull the lever up then down. 
 - [SSG 747-800](https://store.x-plane.org/B-747-8-Series-Anniversary-Edition_p_1079.html)
 - [FlyjSim Q4XP](https://www.flyjsim.com/q4xp)
 
