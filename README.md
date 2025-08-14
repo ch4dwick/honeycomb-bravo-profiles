@@ -17,7 +17,7 @@ Requirement:
 - [Toliss Airbus A340](https://toliss.com/pages/a340-600)
 - [Toliss Airbus A321](https://toliss.com/pages/a321) (could probably work on the A320 & A319)
 Special behavior: These two profiles simplify the autoland procedure of pressing AP 1 & 2 on ILS. To use, just press Autopilot on your Bravo twice on ILS approach.
-- Beechcraft C90B (works on the IBAV8N C90B Blackhawk) [GNS](https://forums.x-plane.org/files/file/92114-king-air-c90b-evo-gns-blackhawk-xp12/) & [G1000](https://forums.x-plane.org/files/file/89178-king-air-c90b-evo-g1000-blackhawk/)
+- Beechcraft C90B (works on the JP_Evo C90B Blackhawk) [GNS](https://forums.x-plane.org/files/file/92114-king-air-c90b-evo-gns-blackhawk-xp12/) & [G1000](https://forums.x-plane.org/files/file/89178-king-air-c90b-evo-g1000-blackhawk/)
 - [Zibo 737-800](https://forums.x-plane.org/forums/topic/138974-b737-800x-zibo-mod-info-installation-download-links/)
 - [LevelUp 737](https://forum.thresholdx.net/files/file/3865-levelup-737ng-series/)
 
